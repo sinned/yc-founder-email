@@ -1,7 +1,7 @@
 # YC Founder Email
 
 A cold(ish) outreach email to **current YC batch founders**, plus the workflow for
-personalizing it per-recipient. The live draft is `yc-batch-email.md`.
+personalizing it per-recipient. The live draft is `templates/yc-batch-email.md`.
 
 > **Main repo:** https://github.com/sinned/found-with-claude (lives at
 > `../found-with-claude/`). That is the canonical project this email exists to promote;
@@ -81,7 +81,7 @@ The email opens with a `[PERSONAL HOOK]` slot. Per recipient:
    line rather than fake it.
 3. Fill `[name]` in the To line and greeting.
 
-There's a "How to use this template" block at the top of `yc-batch-email.md` that
+There's a "How to use this template" block at the top of `templates/yc-batch-email.md` that
 must be DELETED before sending.
 
 ### Optional idea not yet built

@@ -9,7 +9,7 @@ skills pack for the founder work the code doesn't cover (idea to Demo Day).
 
 ## What's here
 
-- **`yc-batch-email.md`** — the live email draft. A short, founder-to-founder note
+- **`templates/yc-batch-email.md`** — the live email draft. A short, founder-to-founder note
   (~120 words) leading with the durable knowledge corpus that found-with-claude builds.
   It contains a `[PERSONAL HOOK]` slot and `[name]` placeholders to fill per recipient,
   plus a "How to use this template" block that is deleted before sending.

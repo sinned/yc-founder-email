@@ -1,6 +1,6 @@
 ---
 name: yc-founder-emails
-description: Hydrate a flight of personalized YC founder outreach emails from a LinkedIn connections CSV, using the yc-batch-email.md template. Researches one genuine hook per founder and writes a CRM contact record (with the ready-to-send draft) per founder into crm/contacts/, then refreshes crm/pipeline.md. Trigger phrases: "hydrate the founder emails", "draft the YC flight", "personalize the batch email", "make the founder outreach drafts".
+description: Hydrate a flight of personalized YC founder outreach emails from a LinkedIn connections CSV, using the templates/yc-batch-email.md template. Researches one genuine hook per founder and writes a CRM contact record (with the ready-to-send draft) per founder into crm/contacts/, then refreshes crm/pipeline.md. Trigger phrases: "hydrate the founder emails", "draft the YC flight", "personalize the batch email", "make the founder outreach drafts".
 ---
 
 # YC Founder Emails
@@ -29,7 +29,7 @@ reaching out, NOT a vendor blast. The rules in the repo `CLAUDE.md` are binding:
 
 ## Input
 
-1. **The template** — `yc-batch-email.md` in the repo root. This is the single source
+1. **The template** — `templates/yc-batch-email.md`. This is the single source
    of truth for body copy, subject, sign-off, and the P.S. Read it fresh every run;
    do not hardcode the copy into this skill.
 2. **The connections CSV** — a LinkedIn data export (Settings > Data Privacy > Get a
@@ -50,7 +50,7 @@ reaching out, NOT a vendor blast. The rules in the repo `CLAUDE.md` are binding:
 
 ## Steps
 
-1. **Read the template** (`yc-batch-email.md`) and the repo `CLAUDE.md` so the tone
+1. **Read the template** (`templates/yc-batch-email.md`) and the repo `CLAUDE.md` so the tone
    rules and current copy are in context.
 
 2. **Parse the CSV.** Skip any leading notes lines, find the `First Name` header, and
