@@ -18,9 +18,9 @@ Hey [name],
 
 [PERSONAL HOOK — one specific line from their LinkedIn/company/launch.]
 
-You'll do a hundred user calls this batch. Then a partner asks what you've actually learned, and you're scrolling three weeks of call notes trying to remember who said the thing that mattered. I've done this three times: the hard part was never the code. It's holding onto what they told you and acting on it before it's gone.
+You can build anything this batch. That's the problem. The code was never the hard part, and now it's not even the slow part. What's hard is knowing what's worth building: which of a hundred conversations to bet on, and whether the signal is real or just people being polite. I've done this three times, and that's the call you're still making on gut.
 
-I built **found-with-claude** for that: 13 Claude Code skills for the work the code doesn't cover (finding the real problem, synthesizing interviews, prepping Demo Day). The part I care about: every run deposits what you learned into a **durable knowledge corpus**, structured facts that pile up run after run. Your hardest-won learning stops dying in Notion tabs and Slack threads. By Demo Day you've got receipts, not vibes.
+I built **found-with-claude** for exactly that: 13 Claude Code skills for the work the code doesn't cover (finding the real problem, synthesizing interviews, pressure-testing the idea, scoping and reviewing what you build, prepping Demo Day). The part I care about: every run deposits what you learned into a **durable knowledge corpus**, structured facts that pile up run after run. So the next hard call isn't a guess. By Demo Day you're deciding on receipts, not vibes.
 
 Takes 30 seconds to try:
 
