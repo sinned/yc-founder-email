@@ -39,7 +39,7 @@ skills pack for the founder work the code doesn't cover (idea to Demo Day).
 
 ## Privacy
 
-This repo is **public.** `Connections.csv`, the generated `emails/`, all real CRM
-contact records (`crm/contacts/*` except `_example.md`), and `crm/pipeline.md` hold
-personal contact data and are git-ignored. Keep them local; do not commit them. If you
+This repo is **public.** `Connections.csv`, all real CRM contact records
+(`crm/contacts/*` except `_example.md`), and `crm/pipeline.md` hold personal contact
+data and are git-ignored. Keep them local; do not commit them. If you
 want the CRM data version-controlled, make the repo private first.
