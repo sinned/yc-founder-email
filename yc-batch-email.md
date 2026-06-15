@@ -10,7 +10,7 @@
 
 **To:** [name]
 **From:** Dennis Yang <sinned@anthropic.com>
-**Subject:** "talk to users" is only half the advice
+**Subject:** a note from a 3x founder at Anthropic
 
 ---
 
@@ -18,11 +18,9 @@ Hey [name],
 
 [PERSONAL HOOK — one specific line from their LinkedIn/company/launch.]
 
-I've started three companies, so I know what your next few months look like: you'll talk to a hundred-plus people (customers, users, advisors), and most of what they tell you quietly evaporates. The hard part was never the code. It's holding onto what they actually said and turning it into the right call on what to build.
+You'll do a hundred user calls this batch. Then a partner asks what you've actually learned, and you're scrolling three weeks of call notes trying to remember who said the thing that mattered. I've done this three times: the hard part was never the code. It's holding onto what they told you and acting on it before it's gone.
 
-I built **found-with-claude** for exactly that: 13 Claude Code skills for the founder work the code doesn't cover: finding the real problem, synthesizing interviews, stress-testing an idea before you build it, writing the strategy, prepping Demo Day. Drop in messy notes or a raw transcript, get back structured output you can act on the same day.
-
-Here's the part I actually care about: every run also deposits what you learned into a **durable knowledge corpus** for your startup: insights, problems, customer segments, and decisions, all captured as structured facts that build up run after run. Your hardest-won learning stops dying in Notion tabs and Slack threads. By Demo Day you've got receipts, not vibes.
+I built **found-with-claude** for that: 13 Claude Code skills for the work the code doesn't cover (finding the real problem, synthesizing interviews, prepping Demo Day). The part I care about: every run deposits what you learned into a **durable knowledge corpus**, structured facts that pile up run after run. Your hardest-won learning stops dying in Notion tabs and Slack threads. By Demo Day you've got receipts, not vibes.
 
 Takes 30 seconds to try:
 
@@ -32,9 +30,7 @@ claude
 /new-startup
 ```
 
-Two full worked examples are inside, so you can watch the corpus build before you run anything yourself.
-
-If you've got 15 minutes, point one skill at something real and tell me what was useful and what broke. I'd take brutal feedback over polite feedback any day.
+Point one skill at something real and tell me what was useful and what broke. I'd take brutal over polite any day.
 
 Dennis
 3x founder, now Claude Evangelist at Anthropic

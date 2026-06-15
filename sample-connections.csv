@@ -1,0 +1,7 @@
+Notes:
+"When exporting your connection data, you may notice that some of the email addresses are missing. You will only see email addresses for connections who have allowed their connections to see or download their email address using this setting https://www.linkedin.com/psettings/privacy/email. You can learn more here https://www.linkedin.com/help/linkedin/answer/261"
+
+First Name,Last Name,URL,Email Address,Company,Position,Connected On
+Jane,Doe,https://www.linkedin.com/in/janedoe,jane@acme.com,Acme,Co-founder & CEO,01 Jun 2026
+Sam,Lee,https://www.linkedin.com/in/samlee,,Beta Health,Founder,28 May 2026
+Priya,Patel,https://www.linkedin.com/in/priyapatel,priya@frnd.io,Frnd,CEO,15 May 2026

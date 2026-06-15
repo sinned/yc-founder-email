@@ -1,0 +1,10 @@
+# Personal contact data — never commit
+Connections.csv
+*Connections*.csv
+connections*.csv
+
+# ...but keep the dry-run fixture (it contains no real contacts)
+!sample-connections.csv
+
+# Generated, recipient-specific drafts — review locally, don't commit
+emails/
