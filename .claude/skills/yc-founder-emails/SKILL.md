@@ -1,6 +1,6 @@
 ---
 name: yc-founder-emails
-description: Hydrate a flight of personalized YC founder outreach emails from a LinkedIn connections CSV, using the yc-batch-email.md template. Researches one genuine hook per founder and writes one review-ready draft file each. Trigger phrases: "hydrate the founder emails", "draft the YC flight", "personalize the batch email", "make the founder outreach drafts".
+description: Hydrate a flight of personalized YC founder outreach emails from a LinkedIn connections CSV, using the yc-batch-email.md template. Researches one genuine hook per founder and writes a CRM contact record (with the ready-to-send draft) per founder into crm/contacts/, then refreshes crm/pipeline.md. Trigger phrases: "hydrate the founder emails", "draft the YC flight", "personalize the batch email", "make the founder outreach drafts".
 ---
 
 # YC Founder Emails
@@ -9,9 +9,11 @@ Turns a list of YC founder connections (a LinkedIn connections CSV export) into 
 flight of individually personalized outreach emails, each introducing the founder to
 **found-with-claude** (https://github.com/sinned/found-with-claude).
 
-This skill does NOT send anything. It writes one review-ready markdown draft per
-founder to `emails/`, plus an index, so Dennis can read every draft and send them
-himself.
+This skill does NOT send anything. It populates the **file-based CRM** at `crm/`: one
+contact record per founder (`crm/contacts/<slug>.md`) holding the hydrated draft, the
+hook, and a dated log, then refreshes the board at `crm/pipeline.md`. Dennis reviews
+each draft in its record and sends it himself. See `crm/README.md` for the record
+schema and status funnel.
 
 ## What this protects
 
@@ -79,28 +81,29 @@ reaching out, NOT a vendor blast. The rules in the repo `CLAUDE.md` are binding:
    hook line (or remove it), and **delete the "How to use this template" instruction
    block** at the top. The output is a real email, not a template.
 
-6. **Write one file per founder** to `emails/<firstname>-<lastname>.md` (lowercase,
-   kebab). Each file starts with a small frontmatter block for review, then the
-   hydrated email:
+6. **Write one CRM contact record per founder** to
+   `crm/contacts/<firstname>-<lastname>.md` (lowercase, kebab). Follow `crm/_template.md`
+   and `crm/contacts/_example.md` exactly. If a record already exists for that person
+   (match by LinkedIn URL), UPDATE it (append to the log, refresh the draft) rather than
+   clobbering its history. Each record:
+   - Frontmatter per `crm/README.md`: set `status: drafted` (or `researched` if the hook
+     was cut and you want a review before drafting), `hook_source`, `next_action: send`,
+     a sensible `next_action_date`, `last_touch` = today, and `stage` if inferable.
+   - `**Hook:**` line (or blank if cut).
+   - `## Log` — append a dated line: imported, hook researched (with source), drafted.
+   - `## Draft` — the fully hydrated email (To/From/Subject + body), with the "How to
+     use this template" block deleted. This is the ready-to-send copy.
 
-   ```markdown
-   ---
-   to: Jane Doe <jane@acme.com>   # or "Jane Doe (no email in export)"
-   company: Acme
-   linkedin: https://linkedin.com/in/jane
-   hook_source: https://...        # URL the hook was verified from, or "none"
-   hook: present | cut (no genuine hook found)
-   ---
-
-   [hydrated email body]
-   ```
-
-7. **Write `emails/INDEX.md`** — a review checklist: one row per founder with name,
-   company, whether a hook was found, the hook source link, and whether an email
-   address was present. This is Dennis's send queue.
+7. **Refresh `crm/pipeline.md`** — the board, grouped by status, per the format in
+   `crm/README.md`. Rebuild it from all contact records each run so it reflects current
+   state. This is Dennis's send queue.
 
 8. **Report a run summary** — total drafted, how many got a real hook vs cut, how many
    are missing an email address, and any rows flagged as probably-not-founders.
+
+**Privacy:** `crm/contacts/*` (except `_example.md`) and `crm/pipeline.md` are
+git-ignored because this repo is public. Never move real records out of those ignored
+paths, and never commit them.
 
 ## Stage-based skill callout (optional)
 
@@ -148,9 +151,10 @@ If yes, it is generic. Cut it.
 ## Output
 
 ```
-emails/
-  INDEX.md              # review + send checklist, one row per founder
-  jane-doe.md           # hydrated, ready to read and send
-  sam-lee.md
-  ...
+crm/
+  pipeline.md           # board: everyone by status + next action (git-ignored)
+  contacts/
+    jane-doe.md         # contact record: frontmatter + hook + log + ready-to-send draft
+    sam-lee.md          # (git-ignored; real records stay local)
+    ...
 ```

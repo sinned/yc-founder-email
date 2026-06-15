@@ -8,3 +8,10 @@ connections*.csv
 
 # Generated, recipient-specific drafts — review locally, don't commit
 emails/
+
+# File-based CRM: live data holds real contact info + outreach status.
+# Repo is public, so keep real records and the board local. Commit only the
+# system: README.md, _template.md, and the fake contacts/_example.md.
+crm/contacts/*
+!crm/contacts/_example.md
+crm/pipeline.md

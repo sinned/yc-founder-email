@@ -62,10 +62,17 @@ reaching out, NOT a vendor blast. Protect that tone in every edit.
 
 This is now automated by the **`yc-founder-emails`** skill
 (`.claude/skills/yc-founder-emails/`): it reads a LinkedIn connections CSV export
-(pre-filtered to YC founders), researches one genuine hook per founder, and writes one
-review-ready draft to `emails/` plus an `emails/INDEX.md` send checklist. It never
-sends. The CSV and `emails/` are git-ignored (personal contact data). The manual
-per-recipient steps below are what the skill does under the hood:
+(pre-filtered to YC founders), researches one genuine hook per founder, and writes a
+**CRM contact record** per founder into `crm/contacts/` (frontmatter + hook + log +
+ready-to-send draft), then refreshes the `crm/pipeline.md` board. It never sends.
+
+Outreach is tracked in a **file-based CRM** at `crm/` (see `crm/README.md`): one
+markdown file per contact is the source of truth, with a status funnel and a pipeline
+board. Because this repo is **public**, real contact records and the board are
+git-ignored; only the system (`crm/README.md`, `crm/_template.md`,
+`crm/contacts/_example.md`) is committed. Same rule for the CSV.
+
+The manual per-recipient steps below are what the skill does under the hood:
 
 The email opens with a `[PERSONAL HOOK]` slot. Per recipient:
 1. Pull the founder's LinkedIn / company / launch (use Claude + web).
